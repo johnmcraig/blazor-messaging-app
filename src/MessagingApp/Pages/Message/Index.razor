@@ -1,0 +1,21 @@
+﻿@page "/message"
+@using MessagingApp.Data
+
+@foreach (var message in messages)
+{
+    <Message details="@message"/>
+}
+
+@code   {
+    protected List<PostMessage> messages { get; set; }
+
+    protected override void OnInitialized()
+    {
+        messages = new List<PostMessage>
+        {
+            new PostMessage { PostedBy = "Bobby", PostedOn = DateTime.Now, Message = "Hello World!" },
+            new PostMessage { PostedBy = "Alice", PostedOn = DateTime.Now, Message = "How are things?" },
+            new PostMessage { PostedBy = "Nick", PostedOn = DateTime.Now, Message = "The app works if you are seeing this!" },
+        };
+    }
+}
