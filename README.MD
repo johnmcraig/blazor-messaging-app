@@ -2,7 +2,7 @@
 > Using server side Blazor components for a web app to send messages
 
 # Scope
-This project is a expiramental project using Blazor with ASP.Net Core 3.1.
+This project is an expiramental project using Blazor with ASP.Net Core 3.1.
 
 ## Tools Used
 The following was used to create the project:
