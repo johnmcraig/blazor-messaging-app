@@ -6,6 +6,8 @@
     <Message details="@message"/>
 }
 
+<PostNew OnPosted="HandleNewMessage"/>
+
 @code   {
     protected List<PostMessage> messages { get; set; }
 
@@ -17,5 +19,10 @@
             new PostMessage { PostedBy = "Alice", PostedOn = DateTime.Now, Message = "How are things?" },
             new PostMessage { PostedBy = "Nick", PostedOn = DateTime.Now, Message = "The app works if you are seeing this!" },
         };
+    }
+
+    public void HandleNewMessage(PostMessage message)
+    {
+        messages.Add(message);
     }
 }
