@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLibrary
 {
-    public class SqlDataAccess
+    public class SqlDataAccess : ISqlDataAccess
     {
         private readonly IConfiguration _config;
 
