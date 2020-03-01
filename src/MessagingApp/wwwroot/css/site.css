@@ -14,6 +14,21 @@ a, .btn-link {
     border-color: #1861ac;
 }
 
+/* CSS for displayed messages */
+
+.message-container {
+    position: relative;
+}
+
+.message-menu {
+    position: absolute;
+    z-index: 1000;
+    right: 4px;
+    top: 4px;
+}
+
+/* End message CSS*/
+
 app {
     position: relative;
     display: flex;

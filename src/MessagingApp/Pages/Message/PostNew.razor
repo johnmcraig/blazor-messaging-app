@@ -5,9 +5,9 @@
         <EditForm Model="NewMessage" OnInvalidSubmit="HandleSubmit">
             <div class="form-group">
                 <InputTextArea 
-                              @bind-Value="NewMessage.Message"
-                              class="form-control"
-                              placeholder="Try something witty here!"/> 
+                @bind-Value="NewMessage.Message"
+                class="form-control"
+                placeholder="Try something witty here!"/> 
             </div>
             <button class="btn btn-primary">Post</button>
         </EditForm>
@@ -28,8 +28,4 @@
 
         NewMessage = new PostMessage();
     }
-
-
-
-
 }
