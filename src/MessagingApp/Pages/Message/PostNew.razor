@@ -2,12 +2,12 @@
 
 <div class="card my-3">
     <div class="card-body">
-        <EditForm Model="NewMessage" OnInvalidSubmit="HandleSubmit">
+        <EditForm Model="NewMessage" OnValidSubmit="HandleSubmit">
             <div class="form-group">
                 <InputTextArea 
                 @bind-Value="NewMessage.Message"
                 class="form-control"
-                placeholder="Try something witty here!"/> 
+                placeholder="Try typing something witty here..."/> 
             </div>
             <button class="btn btn-primary">Post</button>
         </EditForm>
@@ -22,10 +22,9 @@
 
     public void HandleSubmit()
     {
-        NewMessage.PostedBy = "";
+        NewMessage.PostedBy = "John";
         NewMessage.PostedOn = DateTime.Now;
         OnPosted.InvokeAsync(NewMessage);
-
         NewMessage = new PostMessage();
     }
 }
