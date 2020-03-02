@@ -1,0 +1,26 @@
+﻿<div class="form-group">
+    <textarea @bind="MessageText" class="form-control" />
+</div>
+<button class="btn btn-primary" @onclick="Update">Update</button>
+<button class="btn btn-danger" @onclick="Cancel">Cancel</button>
+
+@code {
+    [Parameter]
+    public string MessageText { get; set; }
+
+    [Parameter]
+    public EventCallback OnCanceled { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnUpdated { get; set; }
+
+    protected async Task Update()
+    {
+        await OnUpdated.InvokeAsync(MessageText);
+    }
+
+    protected async Task Cancel()
+    {
+        await OnCanceled.InvokeAsync(EventArgs.Empty);
+    }
+}
