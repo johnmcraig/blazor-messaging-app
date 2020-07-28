@@ -37,7 +37,7 @@ namespace DataAccessLibrary
 
         public async Task<PostMessageModel> ReadSingle(int id)
         {
-            var sql = "SELECT * FROM Messages WHERE Id = @Id;";
+            string sql = "SELECT * FROM Messages WHERE Id = @Id;";
 
             using IDbConnection connection = new SqlConnection(_config.GetConnectionString(defaultConn));
             connection.Open();
@@ -64,7 +64,7 @@ namespace DataAccessLibrary
 
         public async Task<int> Update(PostMessageModel messageModel)
         {
-            string sql = "select * from dbo.Message";
+            string sql = "UPDATE Messages SET PostedBy = @PostedBy, PostedOn = @PostedOn, Message = @Message WHERE Id = @Id";
 
             using var connection = new SqlConnection(_config.GetConnectionString(defaultConn));
 
