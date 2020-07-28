@@ -14,6 +14,21 @@ a, .btn-link {
     border-color: #1861ac;
 }
 
+/* CSS for displayed messages */
+
+.message-container {
+    position: relative;
+}
+
+.message-menu {
+    position: absolute;
+    z-index: 1000;
+    right: 4px;
+    top: 4px;
+}
+
+/* End message CSS*/
+
 app {
     position: relative;
     display: flex;
@@ -47,7 +62,7 @@ app {
 }
 
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-color: #702d6c;
 }
 
     .sidebar .top-row {

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessagingApp", "MessagingApp.csproj", "{A6FFB21E-BE66-4CF2-A27A-8FB374CC85B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLibrary", "..\DataAccessLibrary\DataAccessLibrary.csproj", "{A5256487-61AA-411F-B740-4A6C8C034449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLibrary", "..\DataAccessLibrary\DataAccessLibrary.csproj", "{A5256487-61AA-411F-B740-4A6C8C034449}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

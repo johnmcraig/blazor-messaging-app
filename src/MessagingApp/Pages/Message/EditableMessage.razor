@@ -1,0 +1,59 @@
+﻿@using MessagingApp.Data
+
+    <div @onmouseover="ToggleMenuOn"
+         @onmouseout="ToggleMenuOff"
+         class="message-container">
+        @if (EditMode)
+        {
+            <EditMessage MessageText="@Details.Message"
+                         OnUpdated="HandleMessageChanged"
+                         OnCanceled="HandleEditCancelled"/>
+        }
+        else
+        {
+            @if (MenuVisible == true)
+            {
+                <button class="btn btn-secondary message-menu"
+                        @onclick="ToggleEdit">
+                    Edit
+                </button>
+            }
+            <Message Details="Details" />
+        }
+    </div>
+@MenuVisible
+
+@code {
+    [Parameter]
+    public PostMessage Details { get; set; }
+
+    public bool MenuVisible { get; set; }
+
+    public bool EditMode { get; set; }
+
+    protected void ToggleMenuOn()
+    {
+        MenuVisible = true;
+    }
+
+    protected void ToggleMenuOff()
+    {
+        MenuVisible = false;
+    }
+
+    protected void ToggleEdit()
+    {
+        EditMode = true;
+    }
+
+    protected void HandleEditCancelled()
+    {
+        EditMode = false;
+    }
+
+    protected void HandleMessageChanged(string newMessage)
+    {
+        Details.Message = newMessage;
+        EditMode = false;
+    }
+}
