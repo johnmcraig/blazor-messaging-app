@@ -25,7 +25,7 @@ namespace DataAccessLibrary
         {
             string connectionString = _config.GetConnectionString(ConnectionStringName);
 
-            using (IDbConnection connection = new SqlConnection(connectionString))
+            using(IDbConnection connection = new SqlConnection(connectionString))
             {
                 var data = await connection.QueryAsync<T>(sql, parameters);
 
@@ -39,7 +39,7 @@ namespace DataAccessLibrary
         {
             string connectionString = _config.GetConnectionString(ConnectionStringName);
 
-            using (IDbConnection connection = new SqlConnection(connectionString))
+            using(IDbConnection connection = new SqlConnection(connectionString))
             {
                 await connection.ExecuteAsync(sql, parameters);
             }
